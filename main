@@ -1,0 +1,56 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+package main;
+// importamos el scanner
+import java.util.*;
+
+/**
+ *
+ * @author saith
+ */
+public class main {
+// invocamos el scanner
+    private static Scanner input = new Scanner(System.in);
+
+    public static void main(String[] args) {
+        System.out.println("Se creara el objeto Saith");
+        // Creamos un nuevo objeto persona llamado Saith
+        Persona Saith = new Persona();
+
+        System.out.println("Objeto creado");
+        //en el método constructor "presentarse(String otro)" hacemos que Saith se despida
+        Saith.presentarse("adios!");
+        System.out.println("Se creara el objeto Ori");
+        // Creamos un nuevo objeto persona llamado Ori
+        Persona Ori = new Persona("Ori", 4);
+        System.out.println("Objeto creado");
+        //en el método constructor "presentarse(String otro)" hacemos que Ori se despida
+        Ori.presentarse("adios!");
+
+        //Cómo acceder o modificar atributos privados si se quiere?
+        //los métodos getters y setter (accesores y mutadores) lo permiten.
+        // Pedimos un el nombre ancual de la persona como comprobante para cambiarse el nombre
+        System.out.println("Dime tu nombre actual");
+        // Con el scanner lo guardamos en una variable
+        String comprobarNombre = input.nextLine();
+        // Creamos un if que compare la variable que acabamos de pedir con el nombre de, en este caso Ori 
+        if (comprobarNombre.equals(Ori.getNombre())) {
+            Ori.setNombre("Ori Premium");
+            System.out.println("El nombre del objeto Ori es: " + Ori.getNombre());
+        // Creamos un else if que compare la variable que acabamos de pedir con el nombre de, en este caso Saith    
+        } else if (comprobarNombre.equals(Saith.getNombre())) {
+            Saith.setNombre("Saith Premium");
+            System.out.println("El nombre del objeto Saith es: " + Saith.getNombre());
+        // Creamos un else por si ninguno de los anteriores casos se cumpla y imprimimos "nombre incorrecto"
+        }else {
+            System.out.println("Nombre incorrecto");
+        }
+            
+        
+        
+        
+        
+
+    }
+}
