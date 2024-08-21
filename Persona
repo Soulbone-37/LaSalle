@@ -1,0 +1,59 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package main;
+
+
+
+/**
+ *
+ * @author saith
+ */
+public class Persona {
+    
+    // Declaramos 2 variables, nombre y edad
+    private String nombre;
+    private int edad;
+
+    // Creamos un método constructora con el mismo nombre de la clase para asignarle nombre y edad a los objetos que usen este constructor, en esta caso Saith
+    Persona() {
+        System.out.println("Construyendo objeto con constructor 1");
+        nombre = "Saith";
+        edad = 17;
+    }
+    
+    // Creamos otro método constructor con el nombre de la clase pero esta vez con parametros de nombre y edad para que los objetos que usen este constructor asignen esas variables cuando el objeto se cree
+    Persona(String nombre, int edad) {
+        System.out.println("Construyendo objeto con constructor 2");
+        this.nombre = nombre;// con this. hago referencia al atributo de la clase
+        this.edad = edad;
+    }
+
+    // Hacemos un getter para poder invocar la edad del objeto en la clase main
+    public int getEdad() {
+        return this.edad;
+    }
+
+    // Hacemos un getter para poder invocar el nombre del objeto en la clase main
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    // Hacemos un setter para poder cambiar el nombre del objeto
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    // Hacemos un método para que el objeto que use la clase persona se presente
+    void presentarse() {
+        System.out.println("Hola soy " + nombre + " y tengo " + edad + " años");
+    }
+
+    // Hacemos un método constructor con el mismo nombre del anterior configurado para decir un mensaje despues de que el objeto se presente, en este caso dentro de deste método invocamos el anterior para presentarse y luego en el main elejimos el mensaje a dar
+    void presentarse(String otro) {
+        presentarse();
+        System.out.println(otro);
+    }
+
+}
